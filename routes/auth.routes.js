@@ -152,7 +152,7 @@ router.post("/login", isLoggedOut, (req, res, next) => {
 
     res.redirect("/");
   });
-}); */*/
+}); */
 
 
 
