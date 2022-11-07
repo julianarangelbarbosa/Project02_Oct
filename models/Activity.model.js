@@ -1,3 +1,4 @@
+const { text } = require('express');
 const { Schema, model } = require('mongoose');
 
 const taskSchema = new Schema(
@@ -11,7 +12,7 @@ const taskSchema = new Schema(
     },
     description: String,
     date: {
-        type: date
+    type: date,
     }, 
     type: {
         type: Enumerator,
