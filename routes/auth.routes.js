@@ -1,4 +1,5 @@
 const express = require("express");
+const Planner = require('../models/User.model');
 const router = express.Router();
 
 // ℹ️ Handles password encryption
@@ -152,5 +153,9 @@ router.get("/logout", isLoggedIn, (req, res) => {
     res.redirect("/");
   });
 });
+
+
+
+
 
 module.exports = router;
