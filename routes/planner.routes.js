@@ -21,12 +21,12 @@ router.get("/planner", isLoggedOut, async (req, res) => {
 
     
 router.get("/edit-task/:id", isLoggedOut, (req, res) => {
-        res.render("/views/auth/");
+        res.render("/views/edit-task");
       });
       
-router.post('/planner1', async (req, res, next) => {
+router.post('/edit-task/:id', async (req, res, next) => {
         try {
-          const {aaaaaaaaaaa} = req.body; //// Dúvida
+          const {aaaaaaaaaaa} = req.body; 
           const createPlanner = await Planner.create({aaaaaa}); /// Dúvida
           
           res.redirect(`/planner1`);
