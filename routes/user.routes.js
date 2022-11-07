@@ -13,33 +13,35 @@ const Planner = require('../models/User.model');
 
 // Início do code Juliana e Camila
 // GET /profile
-router.get("/profile", async (req, res,next) => {
-    try {
+router.get('/profile', (req, res,next) => {
+  const user = req.session.user;
+  console.log(user);
+
+  res.render('profile', user);
+});
+
+router.post('/profile', async (req, res, next) => {
+  try {
+
     const {username} = req.body;
-   // const createdTask = await Task.create({Begin}
+
+    const createTask = await Tasks.create({username});
+
+    res.redirect(`/create-task/${createTask.id}`);
+  } catch (error) {
+  console.log(error);
+  next(error);
+  }
+});
+  
+  //if (!req.session) res.redirect('/');
 
 
+  //req.session.destroy((err) => {
+    //if (err) next(err);
+    //else res.redirect('/');
 
-      res.render("auth/planner");
-    }   catch (error){
-        console.log(error);
-        next(error);
-      }
   
-  });
-  
-  router.post('/profile', async (req, res, next) => {
-    try {
-      const {aaaaaaaaaaa} = req.body; //// Dúvida
-      const createPlanner = await Planner.create({aaaaaa}); /// Dúvida
-      
-      res.redirect(`/planner1`);
-  
-  } catch (error){
-        console.log(error);
-        next(error);
-      }
-    })
   
    
-        module.exports = router;
+module.exports = router;

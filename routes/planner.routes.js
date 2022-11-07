@@ -4,13 +4,14 @@ const router = express.Router();
 const isLoggedOut = require("../middleware/isLoggedOut");
 const isLoggedIn = require("../middleware/isLoggedIn");
 const User = require("../models/User.model");
+const Task = require("../models/Activity.model")
 
 
   
  
 router.get("/planner", isLoggedOut, async (req, res) => {
   try {
-    const act = await Act.find({user: id});
+    const act = await Task.find({user: id});
 
     res.render("/views/planner");
   } catch (error) {
@@ -19,7 +20,13 @@ router.get("/planner", isLoggedOut, async (req, res) => {
   }
 })
 
-    
+router.get("/task/:id", isLoggedOut, async (req, res) => {
+  const {id} = req.params
+  const oneTask = await Task.findById(id)
+  res.render("task", oneTask );
+});
+
+
 router.get("/edit-task/:id", isLoggedOut, (req, res) => {
         res.render("/views/edit-task");
       });

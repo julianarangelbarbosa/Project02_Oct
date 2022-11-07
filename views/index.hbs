@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{{!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -7,17 +7,17 @@
     <link rel="stylesheet" href="/stylesheets/style.css" />
     <title>Project 02</title>
 </head>
-<body>
+<body> --}}
     <section class="head">
         <div class="containerNav">
             <nav class="navBar">
-                <img src="/img/logo.png" alt="logo" class="logo">
-                <form action="" class="login">
-                    <input type="text" placeholder="Username" name="username">
-                    <input type="text" placeholder="Password" name="psw">
+                <img src="/images/logo.png" alt="logo" class="logo">
+                <form action="/auth/login" class="login" method="POST">
+                    <input type="text" placeholder="Email" name="email">
+                    <input type="password" placeholder="Password" name="password">
                     <button type="submit">Login</button>
                 </form>
-                <a href="" class="lnkSup">Sign up</a>
+                <a href="/auth/signup" class="lnkSup">Sign up</a>
             </nav>
         </div>
     </section>
@@ -31,5 +31,9 @@
             <p class="txt">Made with love by: Camila && Juliana</p>
         </footer>
     </section>
+    <form action="/auth/logout" method="post">
+<a href="/logout">Logout</a>
+</form>
+{{!--     
 </body>
-</html>
+</html> --}}
