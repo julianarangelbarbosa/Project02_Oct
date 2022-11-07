@@ -2,7 +2,6 @@
 const express = require("express");
 const router = express.Router();
 
-
 const User = require("../models/User.model");
 
 const isLoggedOut = require("../middleware/isLoggedOut");
@@ -14,10 +13,14 @@ const Planner = require('../models/User.model');
 
 // Início do code Juliana e Camila
 // GET /profile
-router.get("/profile", isLoggedOut, (req, res,next) => {
+router.get("/profile", async (req, res,next) => {
     try {
-      const activities = await
-      res.render("planner1");
+    const {username} = req.body;
+   // const createdTask = await Task.create({Begin}
+
+
+
+      res.render("auth/planner");
     }   catch (error){
         console.log(error);
         next(error);
