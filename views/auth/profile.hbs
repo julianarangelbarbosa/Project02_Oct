@@ -1,0 +1,61 @@
+<div id="Picture">
+  <h3>Picture</h3>
+   
+    <form action="/begin/picture" method="POST">
+     
+     <img src="">
+
+ {{#if errorMessage}}
+      <p class="error">{{errorMessage}}</p>
+    {{/if}}
+  </form>
+</div>
+
+
+<div id="dados-user">
+  <h2>User Dates</h2>
+  <form action="/begin/login" method="POST">
+
+    <label> Username
+      <input type="text" name="username" placeholder="Your username" />
+    </label>
+
+    <button type="submit">Edit Information</button>
+
+
+    {{#if errorMessage}}
+      <p class="error">{{errorMessage}}</p>
+    {{/if}}
+  </form>
+</div>
+
+<div id="Begin">
+  <h3>Begin</h3>
+   
+    <form action="/begin/task" method="POST">
+
+    <label> Task Descrition
+      <input type="text" placeholder="Activities / Taks / Events" />
+    </label>
+
+ {{#if errorMessage}}
+      <p class="error">{{errorMessage}}</p>
+    {{/if}}
+  </form>
+</div>
+
+<div id="Begin2">
+  <h3>Period</h3>
+   
+    <form action="/begin/task" method="POST">
+
+    <label> MM/DD/YYY
+      <input type="text" name="descrition" placeholder="Period" />
+
+    </label>
+
+ {{#if errorMessage}}
+      <p class="error">{{errorMessage}}</p>
+    {{/if}}
+  </form>
+</div>
