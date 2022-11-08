@@ -9,7 +9,38 @@
 </head>
 <body>
 
-<h1>Tela para criar as tasks</h1>
+<h1>Create a Task</h1>
+
+<form action='/create' method="post">
+
+
+<p>
+<label for="title">Task Title</label>
+<input type='text' name='title' id='title'/>
+</p>
+
+<label for="description">Task Description</label>
+<textarea name='description' id='description'
+ cols='30' rows='10'></textarea>
+
+<p>
+<label for="type">Task Type</label>
+<input type='text' name='type' id='title'/>
+</p>
+
+<p>
+<label for="adress">Task Location</label>
+<input type='text' name='location' id='title'/>
+</p>
+
+<button type='submit'>Add a Task</button>
+
+</form>
+
+<form action="/auth/logout" method="post">
+<a href="/auth/logout">Logout</a>
+</form>
+
 
 
 </body>

@@ -20,6 +20,7 @@ const userSchema = new Schema(
       type: String,
       required: true,
     },
+    planner: [{type: Schema.Types.ObjectId, ref: "Task"}]
   },
   {
     // this second object adds extra properties: `createdAt` and `updatedAt`
