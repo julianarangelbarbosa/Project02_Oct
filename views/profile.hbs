@@ -13,7 +13,6 @@
 
 <form action='/create' method="post">
 
-
 <p>
 <label for="title">Task Title</label>
 <input type='text' name='title' id='title'/>
@@ -23,25 +22,35 @@
 <textarea name='description' id='description'
  cols='30' rows='10'></textarea>
 
-<p>
-<label for="type">Task Type</label>
-<input type='text' name='type' id='title'/>
+ <p>
+<label for="date">Task Data dd/mm/yy</label>
+<input type='text' name='date' id='date'/>
 </p>
 
 <p>
-<label for="adress">Task Location</label>
-<input type='text' name='location' id='title'/>
+<label for="type">Task Type</label>
+<input type='text' name='type' id='type'/>
+</p>
+
+<p>
+<label for="status">Task Status</label>
+<input type='text' name='status' id='status'/>
+</p>
+
+<p>
+<label for="address">Task Location</label>
+<input type='text' name='address' id='address'/>
 </p>
 
 <button type='submit'>Add a Task</button>
 
 </form>
 
+<form action="/edit-profile" method="post">
+<a href="/edit-profile">Edit Perfil</a>
+</form>
+
 <form action="/auth/logout" method="post">
 <a href="/auth/logout">Logout</a>
 </form>
 
-
-
-</body>
-</html>

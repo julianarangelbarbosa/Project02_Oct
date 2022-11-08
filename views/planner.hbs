@@ -9,7 +9,12 @@
 <body>
     <h1>Planner page</h1>
     {{#each planner}}
-        <p>{{title}}</p>
+        <p>Title: {{title}}</p>
+        <p>Date DD/MM/YY: {{date}}</p>
+        {{!-- <form action='/edit-task/{{_id}}' method="post">   --}}
+        <a href='/task/{{_id}}'>Tasks View</a>
+        {{!-- </form> --}}
     {{/each}}
 </body>
+
 </html>

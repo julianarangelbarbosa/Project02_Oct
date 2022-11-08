@@ -1,0 +1,16 @@
+<h1>Tasks page</h1>
+
+    <p>Title: {{title}}</p>
+    <p>Description: {{description}}</p>
+    <p>Task Date dd/mm/yy: {{date}}</p>  
+    <p>Task Type: {{type}}</p>  
+    <p>Status: {{status}}</p>
+    <p>Address: {{address}}</p>
+    <a href='/edit-task/{{_id}}'>Edit Task</a>
+
+<p>
+<form action="/auth/logout" method="post">
+<a href="/auth/logout">Logout</a>
+</form>
+</p>
+

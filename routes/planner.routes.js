@@ -21,8 +21,8 @@ router.post('/create', async (req, res, next) => {
    const userId = req.session.currentUser._id
   try {
     //Create the task
-    const {title, description, type, status,adress} = req.body;
-    const createdTask = await Task.create({title, description, type, status,adress});
+    const {title, description, date, type, status, address} = req.body;
+    const createdTask = await Task.create({title, description,date, type, status, address});
 
     //Add task to the user
     await User.findByIdAndUpdate(userId, {$push : {planner: createdTask._id}})
@@ -36,16 +36,21 @@ router.post('/create', async (req, res, next) => {
 
 
 //See details
-router.get("/task/:id", isLoggedOut, async (req, res) => {
+router.get("/task/:id", async (req, res) => {
   const {id} = req.params
   const oneTask = await Task.findById(id)
   res.render("task", oneTask );
 })
 
 //See edit task form
-router.get("/edit-task/:id", isLoggedOut, (req, res) => {
-  res.render("edit-task");
-});
+router.get("/edit-task/:id", async (req, res) => {
+  try {
+    const task = await Task.findById(req.params.id)
+    console.log(task.title)
+    res.render("edit-task", task);
+  } catch (error) { 
+    console.log(error)
+  }});
 
 //Receives edit task form 
 router.post('/edit-task/:id', async (req, res, next) => {
@@ -54,54 +59,15 @@ router.post('/edit-task/:id', async (req, res, next) => {
     const { title, description, date, type, status, address } = req.body
           
     const updatedTask = await Task.findByIdAndUpdate(id, { title, description, date, type, status, address });
-
-    res.redirect(`/task/${updatedTask._id}`);
+    res.redirect(`/planner/${updatedTask._id}`);
       
   } catch (error){
       console.log(error)
       next(error);
     }
   })
-/*
-router.get("/planner", isLoggedOut, async (req, res, next) => {
-  try {
-    const act = await Task.find();
-    res.render("/planner",{act});
 
-  } catch (error) {
-    console.log(error);
-    next(error);
-  }
-})
-
-
-
-router.get("/task/:id", isLoggedOut, async (req, res) => {
-  const {id} = req.params
-  const oneTask = await Task.findById(id)
-  res.render("task", oneTask );
-});*/
-
-
-/*router.get("/edit-task/:id", isLoggedOut, (req, res) => {
-        res.render("/views/edit-task");
-      });
-      
-router.post('/edit-task/:id', async (req, res, next) => {
-  try {
-    const { id } = req.params; 
-    const { title, description, date, type, status, address } = req.body
-          
-    const updatedTask = await Task.findByIdAndUpdate(id, { title, description, date, type, status, address });
-
-    res.redirect(`/task/${updatedTask._id}`);
-      
-  } catch (error){
-      console.log(error)
-      next(error);
-    }
-  })
-router.post('/task-delete/:id', async (req, res, next) => {
+/*router.post('/task-delete/:id', async (req, res, next) => {
   try {
     const { id } = req.params;
     await Task.findByIdAndRemove(id);
