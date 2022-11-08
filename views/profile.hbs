@@ -8,40 +8,41 @@
     <title>Document</title>
 </head>
 <body>
-
-<h1>Create a Task</h1>
-
-<form action='/create' method="post">
-
-
-<p>
-<label for="title">Task Title</label>
-<input type='text' name='title' id='title'/>
-</p>
-
-<label for="description">Task Description</label>
-<textarea name='description' id='description'
- cols='30' rows='10'></textarea>
-
-<p>
-<label for="type">Task Type</label>
-<input type='text' name='type' id='title'/>
-</p>
-
-<p>
-<label for="adress">Task Location</label>
-<input type='text' name='location' id='title'/>
-</p>
-
-<button type='submit'>Add a Task</button>
-
-</form>
-
-<form action="/auth/logout" method="post">
-<a href="/auth/logout">Logout</a>
-</form>
-
-
-
+    <div class="containerPfl">  
+    <div class="pflInfo">
+        <img src="{{user.profilePictureURL}}" alt="profilePicture" class="pflPic"/>
+        <form action="/auth/logout" method="post">
+            <a href="/auth/logout">Logout</a>
+        </form>
+    </div>
+    <div class="containerForm">
+        <h1>Create a Task</h1>
+        <form action='/create' method="post">
+            <p>
+            <label for="title">Title</label>
+            <input type='text' name='title' id='title'/>
+            </p>
+            <label for="description">Description</label>
+            <textarea name='description' id='description'cols='30' rows='10'></textarea>
+            <p>
+            <p>
+            <label for="date">Data</label>
+            <input type='text' name='date' id='title' placeholder="dd/mm/yy"/>
+            </p>
+            <label for="type">Choose a tag:</label>
+            <select name="types" id="types">
+                {{#each task.type}}
+                    <option value="{{task.type}}">{{task.type}}</option>
+                {{/each}}
+            </select>
+            </p>
+            <p>
+            <label for="address">Location</label>
+            <input type='text' name='location' id='title'/>
+            </p>
+            <button type='submit'>Add a Task</button>
+        </form>
+    </div>
+</div> 
 </body>
 </html>

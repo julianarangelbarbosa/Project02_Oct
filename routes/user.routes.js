@@ -9,10 +9,11 @@ const User = require('../models/User.model');
 // Início do code Juliana e Camila
 // GET /profile
 router.get('/profile', async (req, res,next) => {
-  const userId = req.session.currentUser._id;
   try {
+    const userId = req.session.currentUser._id;
     const user = await User.findById(userId)
-    res.render('profile', user);
+
+    res.render('profile', {user});
   } catch (error) {
     
   }

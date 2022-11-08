@@ -21,8 +21,8 @@ router.post('/create', async (req, res, next) => {
    const userId = req.session.currentUser._id
   try {
     //Create the task
-    const {title, description, type, status,adress} = req.body;
-    const createdTask = await Task.create({title, description, type, status,adress});
+    const {title, description, type, status, address} = req.body;
+    const createdTask = await Task.create({title, description, type, status, address});
 
     //Add task to the user
     await User.findByIdAndUpdate(userId, {$push : {planner: createdTask._id}})
