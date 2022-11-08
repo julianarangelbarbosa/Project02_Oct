@@ -1,33 +1,27 @@
 
 const express = require("express");
 const router = express.Router();
-const User = require("../models/User.model");
-const Maintask = require ("../models/Activity.model")
+const Task = require ("../models/Task.model")
 const isLoggedOut = require("../middleware/isLoggedOut");
 const isLoggedIn = require("../middleware/isLoggedIn");
-const Planner = require('../models/User.model');
+const User = require('../models/User.model');
 
 // Início do code Juliana e Camila
 // GET /profile
-router.get('/profile', (req, res,next) => {
-  const user = req.session.user;
-  console.log(user);
-
-  res.render('profile', user);
-});
-
-router.post('/profile', async (req, res, next) => {
+router.get('/profile', async (req, res,next) => {
+  const userId = req.session.currentUser._id;
   try {
-
-    const {username, title, description, type, status,adress} = req.body;
-    const createTask = await Maintask.create({username, title, description, type, status,adress});
-
-    res.redirect(`/task-list`);
+    const user = await User.findById(userId)
+    res.render('profile', user);
   } catch (error) {
-  console.log(error);
-  next(error);
+    
   }
+  
+
+
 });
+
+
  
 /*router.get("/task-list", async (req, res, next) => {
   try {

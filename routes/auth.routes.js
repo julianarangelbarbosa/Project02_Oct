@@ -1,5 +1,4 @@
 const express = require("express");
-const Planner = require('../models/User.model');
 const router = express.Router();
 
 
@@ -51,7 +50,7 @@ router.post("/signup", isLoggedOut, async (req, res, next) => {
 
     const createdUser = await User.create({ username, email, password: hashedPassword });
 
-    res.redirect('/profile');
+    res.redirect('/');
     
   } catch (error) {
     console.log(error);
