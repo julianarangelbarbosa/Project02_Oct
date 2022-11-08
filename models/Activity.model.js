@@ -12,16 +12,18 @@ const taskSchema = new Schema(
     },
     description: String,
     date: {
-    type: date,
+        type: String,
     }, 
     type: {
-        type: Enumerator,
+        type: String,
+        enum: ['valid', 'invalid']
     },
     status: {
-        type: Enumerator,
+        type: String,
+        enum: ['valid', 'invalid']
     },
     address: {
-        type: String
+        type: String,
     }
   },
   {

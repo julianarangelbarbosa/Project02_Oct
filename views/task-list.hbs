@@ -1,0 +1,13 @@
+<h1>Task List</h1>
+
+{{#each tasks}}
+ <div class"container">
+    <h3>{{title}}</h3>
+    <p>{{description}}</p>
+    <p>{{type}}</p>
+    <p>{{status}}</p>
+    <p>{{adress}}</p>
+    <a href='/profile/{{_id}}'>See details</a>
+ </div>
+{{/each}}
+
