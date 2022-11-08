@@ -9,7 +9,7 @@ const Task = require("../models/Activity.model")
 
   
  
-router.get("/planner", isLoggedOut, async (req, res) => {
+router.get("/planner", isLoggedOut, async (req, res, next) => {
   try {
     const act = await Task.find({user: id});
 
@@ -32,16 +32,29 @@ router.get("/edit-task/:id", isLoggedOut, (req, res) => {
       });
       
 router.post('/edit-task/:id', async (req, res, next) => {
-        try {
-          const {aaaaaaaaaaa} = req.body; 
-          const createPlanner = await Planner.create({aaaaaa}); /// Dúvida
+  try {
+    const { id } = req.params; 
+    const { title, description, date, type, status, address } = req.body
           
-          res.redirect(`/planner1`);
+    const updatedTask = await Task.findByIdAndUpdate(id, { title, description, date, type, status, address });
+
+    res.redirect(`/task/${updatedTask._id}`);
       
-      } catch (error){
-            console.log(error);
-            next(error);
-          }
-        })
+  } catch (error){
+      console.log(error);
+      next(error);
+    }
+  })
+router.post('/task-delete/:id', async (req, res, next) => {
+  try {
+    const { id } = req.params;
+    await Task.findByIdAndRemove(id);
+    res.redirect('/planner');
+  } catch (error) {
+    console.log(error);
+    next(error);
+    }
+  });
+
 
 module.exports = router;

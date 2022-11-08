@@ -1,4 +1,4 @@
-{{!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -7,33 +7,35 @@
     <link rel="stylesheet" href="/stylesheets/style.css" />
     <title>Project 02</title>
 </head>
-<body> --}}
+<body>
     <section class="head">
         <div class="containerNav">
             <nav class="navBar">
-                <img src="/images/logo.png" alt="logo" class="logo">
-                <form action="/auth/login" class="login" method="POST">
-                    <input type="text" placeholder="Email" name="email">
-                    <input type="password" placeholder="Password" name="password">
-                    <button type="submit">Login</button>
-                </form>
-                <a href="/auth/signup" class="lnkSup">Sign up</a>
+                <img src="/images/logo.png" alt="logo" id="logo">
+                    <div class="containerButtons">
+                        <form action="/auth/login" class="login" method="POST">
+                            <input type="text" placeholder="Email" name="email">
+                            <input type="password" placeholder="Password" name="password">
+                            <button type="submit" class="logB">Login</button>
+                        </form>
+                        <a href="/auth/signup" class="lnkSup">Sign up</a>
+                    </div>
             </nav>
         </div>
     </section>
     <section class="body">
-        <img src="" alt="" class="vetor">
-        <h1 class="tlt">The planner you <span class="i">really</span> need!</h1>
-        <p class="para"></p>
+        <div class="bContainer">
+            <img src="/images/vector.png" alt="" class="vector"/>
+                <div class="contTxt">
+                    <h1 class="tlt">The planner you <span class="i">really</span> need!</h1>
+                    <p class="parag">Organize your daily tasks in a very simple way!</p>
+                </div>
+        </div>
     </section>
     <section class="f-container">
         <footer class="footer">
-            <p class="txt">Made with love by: Camila && Juliana</p>
+            <p class="txt">Made with <span class="red"><b>love</b></span> by: Camila && Juliana</p>
         </footer>
     </section>
-    <form action="/auth/logout" method="post">
-<a href="/logout">Logout</a>
-</form>
-{{!--     
 </body>
-</html> --}}
+</html>

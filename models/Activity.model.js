@@ -15,11 +15,11 @@ const taskSchema = new Schema(
     }, 
     type: {
         type: String,
-        enum: ['valid', 'invalid']
+        enum: ['Work', 'Personal', 'Family', 'School', 'Leisure']
     },
     status: {
         type: String,
-        enum: ['valid', 'invalid']
+        enum: ['In process', 'Done']
     },
     address: {
         type: String,
