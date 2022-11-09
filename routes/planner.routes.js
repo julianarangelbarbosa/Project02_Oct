@@ -59,7 +59,7 @@ router.post('/edit-task/:id', async (req, res, next) => {
     const { title, description, date, type, status, address } = req.body
           
     const updatedTask = await Task.findByIdAndUpdate(id, { title, description, date, type, status, address });
-    res.redirect(`/planner/${updatedTask._id}`);
+    res.redirect(`/planner`);
       
   } catch (error){
       console.log(error)

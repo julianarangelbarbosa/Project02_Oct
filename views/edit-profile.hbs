@@ -1,0 +1,22 @@
+    <h1>Edit Perfil</h1>
+
+<form action='/edit-profile/{{_id}}' method="post"></form>
+
+<label for="username">Username</label>
+<input type='text' name='username' id='username' value='{{username}}'/>
+
+<p>
+<label for="email">Email</label>
+<input type='text' name='email' id='email' value='{{email}}'/>
+</p>
+
+<p>
+<label for="password">Password</label>
+<input type='text' name='password' id='password' value='{{password}}'/>
+</p>
+
+<button type='submit'>Edit the Profile</button>
+
+<a href='/planner'>Update Task</a>
+
+</form>

@@ -16,8 +16,6 @@ router.get('/profile', async (req, res,next) => {
   } catch (error) {
     
   }
-  
-
 
 });
 
