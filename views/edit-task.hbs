@@ -31,11 +31,16 @@ cols='30' rows='10'> {{description}}</textarea>
 <input type='text' name='address' id='address' value='{{address}}'/>
 </p>
 
-<button type='submit'>Edit the Tasks</button>
+<button type='submit'>Edit Tasks</button>
 
 </form>
+
+ 
        
-      
+<form action="/task-delete/{{_id}}" method="post">
+<button type='submit'>Delete Task</button>
+
+</form>      
 
 
 

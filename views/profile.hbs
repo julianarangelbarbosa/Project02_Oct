@@ -13,7 +13,7 @@
         <img src="{{user.profilePictureURL}}" alt="profilePicture" class="pflPic"/>
         <a href="/planner" class="lnkPlanner">See all your tasks</a>
         <form action="" method="post">
-            <a href="" class="lnk-EP">Edit profile</a>
+            <a href="/edit-profile/{{user.username}}" class="lnk-EP">Edit profile</a>
         </form>
         <form action="/auth/logout" method="post">
             <a href="/auth/logout" class="lnk-LO">Logout</a>
@@ -27,14 +27,14 @@
             <textarea name='description' id='description'cols='40' rows='1' placeholder="Describe your task" class="tskIn"></textarea>
             <input type='date' name='date' id='title' class="tskIn"/>
             <label for="type">Choose a tag:</label>
-            <select name="types" id="types">
+            <select name="type" id="type">
                     <option value="Work">Work</option>
                     <option value="Personal">Personal</option>
                     <option value="Family">Family</option>
                     <option value="School">School</option>
                     <option value="Leisure">Leisure</option>
             </select>
-            <input type='text' name='location' id='title' placeholder="Location" class="tskIn"/>
+            <input type='text' name='address' id='title' placeholder="Location" class="tskIn"/>
             </div>
             <button type='submit'>Add a Task</button>
         </form>
