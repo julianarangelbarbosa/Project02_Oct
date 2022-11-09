@@ -1,24 +1,31 @@
-<div id="form">
-  <h2>Sign Up</h2>
-  <form action="/auth/signup" method="POST">
-
-    <label> Username
-      <input type="text" name="username" placeholder="Your username" />
-    </label>
-
-    <label> Email
-      <input type="email" name="email" placeholder="Your email" />
-    </label>
-
-    <label> Password
-      <input type="password" name="password" placeholder="Your password" />
-    </label>
-
-    <button type="submit">Sign Up</button>
-
-
-    {{#if errorMessage}}
-      <p class="error">{{errorMessage}}</p>
-    {{/if}}
-  </form>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/public/stylesheets/style.css" />
+  <title>Sign Up</title>
+</head>
+  <body id="signUpBody">
+    <div class="containerSup">
+    <div class="imgDiv">
+      <h2 class="supTxt">Join us and never forget a task again!</h2>
+      <img src="/images/signup_vector.png" alt="vector" class="img"/>
+    </div>
+    <div id="form">
+      <h2 class="crtTxt">Create Account</h2>
+      <form action="/auth/signup" method="POST" class="supForm">
+        <input type="text" name="username" placeholder="Your username" class="supIpt"/>
+        <input type="email" name="email" placeholder="Your email" class="supIpt" />
+        <input type="password" name="password" placeholder="Password" class="supIptP"/>
+        <p class="passM">Must: 6 chars, one lower and uppercase letter!</p>
+        <button type="submit" class="supBtt">Sign Up</button>
+        {{#if errorMessage}}
+        <p class="error">{{errorMessage}}</p>
+        {{/if}}
+      </form>
+    </div>
+    </div>
+  </body>
+</html>
