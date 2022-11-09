@@ -33,12 +33,12 @@ body{
     height: 20px;
     width: 80px;
     text-align: center;
-    color: #ffffff;
+    color: rgb(255, 255, 255);
     border-radius: 5%;
 }
 .lnkSup{
     text-decoration: none;
-    color:#ffffff
+    color:rgb(255, 255, 255)
 }
 .vector{
     width: 600px;
@@ -85,7 +85,8 @@ body{
 }
 .pflPic{
     width: 100px;
-    margin-left: -100px;
+    margin-left: -130px;
+    margin-bottom: 50px;
 }
 .containerPfl{
     margin-top: 30px;
@@ -100,6 +101,27 @@ body{
 .lnkPlanner{
     text-decoration: none;
     color:rgb(255, 255, 255);
+    margin-left: -120px;
+}
+.form-EP{
+    padding-top: 180px;
+    margin-left: -140px;
+}
+.lnk-EP{
+    text-decoration: none;
+    color:rgb(255, 255, 255);
+    background-color: rgb(255, 177, 0);
+    padding: 10px 30px 10px 30px;
+}
+.form-LO{
+    padding-top: 30px;
+    margin-left: -140px;
+}
+.lnk-LO{
+    text-decoration: none;
+    color:rgb(255, 255, 255);
+    background-color: rgb(255, 177, 0);
+    padding: 10px 44px 10px 43.5px;
 }
 .img{
     width: 262px;
@@ -157,7 +179,6 @@ body{
     border:none;
     background-color: rgb(255, 177, 0);
     text-align: left;
-    
     font-size: 16px;
     border-bottom: 1px solid rgb(141, 141, 141);
 }
@@ -178,18 +199,24 @@ body{
     background: linear-gradient(90deg, rgb(0, 194, 203) 25%, rgb(255, 255, 255) 25%);
 }
 .crtTsk{
+    margin-top: 50px;
     font-size: 20px;
+    margin-left: -110px;
+    margin-bottom: -20px;
 }
 .containerForm{
     width: 400px;
+    margin-left: -100px;
     margin-top: 40px;
-    padding-bottom: 135px;
+    padding-bottom: 20px;
+}
+.formTsk{
     display: flex;
 	flex-direction: column;
 	flex-wrap: nowrap;
-	justify-content: space-between;
+	justify-content: center;
 	align-items: center;
-	align-content: stretch;
+	align-content: center;
 }
 .tskIn{
     border:none;
@@ -198,4 +225,40 @@ body{
     font-size: 16px;
     border-bottom: 1px solid rgb(141, 141, 141);
     color: rgb(141, 141, 141);
+}
+.addTskBtt{
+    background-color: rgb(255,57,95);
+    border: none;
+    color: rgb(255, 255, 255);
+    width: 120px;
+    height: 40px;
+    font-size: 14px;
+    margin-left: 10px;
+    margin-bottom: -40px;
+}
+.formContainer{
+display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+}
+.adIn{
+    margin-top: 20px;
+    border:none;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 16px;
+    border-bottom: 1px solid rgb(141, 141, 141);
+    color: rgb(141, 141, 141);
+}
+.greeting{
+    color: rgb(82,13,156);
+    margin-left: -100px;
+    margin-bottom: -20px;
+    margin-top: -20px;
+}
+.lnk-vt{
+    text-decoration: none;
 }
