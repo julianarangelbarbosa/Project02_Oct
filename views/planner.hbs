@@ -4,17 +4,25 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <title>Planner</title>
 </head>
 <body>
     <h1>Planner page</h1>
-    {{#each planner}}
-        <p>Title: {{title}}</p>
-        <p>Date: {{date}}</p>
-        {{!-- <form action='/edit-task/{{_id}}' method="post">   --}}
-        <a href='/task/{{_id}}'>Tasks View</a>
-        {{!-- </form> --}}
-    {{/each}}
+    <div class="containerCards">
+        {{#each planner}}
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <a href="/task/{{_id}}" class="lnk-vt"><h5 class="card-title">{{title}}</h5></a>
+                <p class="card-text">{{date}}</p>
+                <p class="card-text">{{type}}</p>
+            </div>
+        </div>
+        {{/each}}
+    </div>
 </body>
 
 </html>
+
+
+
