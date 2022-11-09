@@ -7,39 +7,35 @@
     <link rel="stylesheet" href="/stylesheets/style.css" />
     <title>Document</title>
 </head>
-<body>
+<body class="pflBody">
     <div class="containerPfl">  
     <div class="pflInfo">
         <img src="{{user.profilePictureURL}}" alt="profilePicture" class="pflPic"/>
+        <a href="/planner" class="lnkPlanner">See all your tasks</a>
+        <form action="" method="post">
+            <a href="" class="lnk-EP">Edit profile</a>
+        </form>
         <form action="/auth/logout" method="post">
-            <a href="/auth/logout">Logout</a>
+            <a href="/auth/logout" class="lnk-LO">Logout</a>
         </form>
     </div>
-    <div class="containerForm">
-        <h1>Create a Task</h1>
+    <div class=>
+        <h1 class="crtTsk">Create a task</h1>
+        <div class="containerForm">
         <form action='/create' method="post">
-            <p>
-            <label for="title">Title</label>
-            <input type='text' name='title' id='title'/>
-            </p>
-            <label for="description">Description</label>
-            <textarea name='description' id='description'cols='30' rows='10'></textarea>
-            <p>
-            <p>
-            <label for="date">Data</label>
-            <input type='text' name='date' id='title' placeholder="dd/mm/yy"/>
-            </p>
+            <input type='text' name='title' id='title' placeholder="Title" class="tskIn"/>
+            <textarea name='description' id='description'cols='40' rows='1' placeholder="Describe your task" class="tskIn"></textarea>
+            <input type='date' name='date' id='title' class="tskIn"/>
             <label for="type">Choose a tag:</label>
             <select name="types" id="types">
-                {{#each task.type}}
-                    <option value="{{task.type}}">{{task.type}}</option>
-                {{/each}}
+                    <option value="Work">Work</option>
+                    <option value="Personal">Personal</option>
+                    <option value="Family">Family</option>
+                    <option value="School">School</option>
+                    <option value="Leisure">Leisure</option>
             </select>
-            </p>
-            <p>
-            <label for="address">Location</label>
-            <input type='text' name='location' id='title'/>
-            </p>
+            <input type='text' name='location' id='title' placeholder="Location" class="tskIn"/>
+            </div>
             <button type='submit'>Add a Task</button>
         </form>
     </div>
