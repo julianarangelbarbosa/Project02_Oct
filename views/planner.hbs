@@ -8,22 +8,25 @@
     <title>Planner</title>
 </head>
 <body>
-    <h1>Planner page</h1>
+    <h1 class="plannerTlt">Your tasks</h1>
     <div class="containerCards">
         {{#each planner}}
-        <div class="card" style="width: 18rem;">
-            <div class="card-body">
+        <div class="col-sm-3">
+        <div class="card" style="width: 16rem;">
+            <div class="card-body {{type}}">
                 <a href="/task/{{_id}}" class="lnk-vt"><h5 class="card-title">{{title}}</h5></a>
-                <p class="card-text">{{date}}</p>
-                <p class="card-text">{{type}}</p>
+                <p class="txtDate">{{#formatDate date}} {{/formatDate}}</p>
+                <p class="card-text">{{hhmm}}</p>
+                <p class="txtType">{{type}}</p>
             </div>
+        </div>
         </div>
         {{/each}}
     </div>
 </body>
 
-<form action="/profile" method="post">
-<a href="/profile">Create Task</a>
+<form action="/profile" method="post" class="frm-Pfl">
+<a href="/profile" class="lnk-Pfl">Your profile</a>
 </form>
 
 

@@ -9,6 +9,9 @@ router.get('/planner', async (req, res, next) => {
   const userId = req.session.currentUser._id;
   try {
     const user = await User.findById(userId).populate("planner")
+    let correctTasks = user.planner.map((task) => { task.date.toDateString()})
+    
+    console.log(correctTasks)
     res.render('planner', user);
   } catch (error) {
     
@@ -21,8 +24,8 @@ router.post('/create', async (req, res, next) => {
    const userId = req.session.currentUser._id
   try {
     //Create the task
-    const {title, description, date, type, status, address} = req.body;
-    const createdTask = await Task.create({title, description,date, type, status, address});
+    const {title, description, date, type, status, address, hhmm} = req.body;
+    const createdTask = await Task.create({title, description,date, type, status, address, hhmm});
 
     //Add task to the user
     await User.findByIdAndUpdate(userId, {$push : {planner: createdTask._id}})
@@ -58,9 +61,9 @@ router.get("/edit-task/:id", async (req, res) => {
 router.post('/edit-task/:id', async (req, res, next) => {
   try {
     const { id } = req.params; 
-    const { title, description, date, type, status, address } = req.body
+    const { title, description, date, type, status, address, hhmm } = req.body
           
-    const updatedTask = await Task.findByIdAndUpdate(id, { title, description, date, type, status, address });
+    const updatedTask = await Task.findByIdAndUpdate(id, { title, description, date, type, status, address, hhmm });
     res.redirect(`/planner`);
       
   } catch (error){

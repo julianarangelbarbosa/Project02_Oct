@@ -21,6 +21,9 @@ const taskSchema = new Schema(
     },
     address: {
         type: String,
+    },
+    hhmm: {
+      type: String,
     }
   },
   {
