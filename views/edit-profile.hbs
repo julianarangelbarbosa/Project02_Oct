@@ -3,9 +3,9 @@
 <h1 class="ep-Tlt">Edit your profile</h1>
 <form action='/edit-profile/{{username}}' method="post" enctype="multipart/form-data">
     <p>
-        <input type='text' name='email' id='email' placeholder='Edit you email' class="edPfl-IN"/>
+        <input type='text' name='email' id='email' placeholder='Edit you email' class="edPfl-IN" value="{{userUpdate.email}}"/>
     </p>
-    <input type="text" name="currentImg" value="{{profilePictureURL}}" hidden>
-    <input type="file" name="image">
+    <input type="text" name="currentImg" value="{{userUpdate.profilePictureURL}}" hidden>
+    <input type="file" name="image" class="img-IP">
     <button type="submit" class="btt-EP">Edit Profile</button>
 </form>
