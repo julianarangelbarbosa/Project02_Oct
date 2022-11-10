@@ -1,10 +1,10 @@
 <body class="bdContainer"> 
     <h1 class="txtED">Edit your task</h1>
-    <form action='/edit-task/{{_id}}' method="post" class="form-ET">
-        <input type='text' name='title' id='title' value='{{title}}' class="tlt-IP"/>
-        <textarea name='description' id='description' cols='40' rows='1' class="des-IP">{{description}}</textarea>
-        <input type='date' name='date' id='date' value='{{date}}' class="dt-IP"/>
-        <input type='time' name='hhmm' id='hhmm' value='{{hhmm}}' class="hr-IP"/>
+    <form action='/edit-task/{{task._id}}' method="post" class="form-ET">
+        <input type='text' name='title' id='title' value='{{task.title}}' class="tlt-IP"/>
+        <textarea name='description' id='description' cols='40' rows='1' class="des-IP">{{task.description}}</textarea>
+        <input type='date' name='date' id='date' value='{{formatDate.value}}' class="dt-IP"/>
+        <input type='time' name='hhmm' id='hhmm' value='{{task.hhmm}}' class="hr-IP"/>
         <label for="type">Choose a tag:</label>
             <select name="type" id="type" class="tp-ST">
                 <option value="Work">Work</option>
@@ -18,11 +18,11 @@
             <option value="In progress" selected>In progress</option>
             <option value="Done">Done</option>
         </select>
-        <input type='text' name='address' id='address' value='{{address}}' class="add-IP"/>
+        <input type='text' name='address' id='address' value='{{task.address}}' class="add-IP"/>
         <button type='submit' class="btt-ET">Save task</button>
     </form>
    
-    <form action="/task-delete/{{_id}}" method="post">
+    <form action="/task-delete/{{task._id}}" method="post">
         <button type='submit' class="btt-DT">Delete task</button>
     </form>      
 </body>   

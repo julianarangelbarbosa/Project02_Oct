@@ -53,8 +53,13 @@ router.get("/task/:id", async (req, res) => {
 router.get("/edit-task/:id", async (req, res) => {
   try {
     const task = await Task.findById(req.params.id)
-    console.log(task.title)
-    res.render("edit-task", task);
+  
+    const formatDate = task.date
+    formatDate.value = task.date.toISOString().substr(0, 10);
+
+
+
+    res.render("edit-task", {task, formatDate});
   } catch (error) { 
     console.log(error)
   }});
@@ -65,6 +70,8 @@ router.post('/edit-task/:id', async (req, res, next) => {
     const { id } = req.params; 
     const { title, description, date, type, status, address, hhmm } = req.body
     console.log(req.body)
+
+
           
     const updatedTask = await Task.findByIdAndUpdate(id, { title, description, date, type, status, address, hhmm });
     res.redirect(`/planner`);
@@ -101,8 +108,8 @@ router.get("/edit-profile/:username", async (req, res) => {
 
   try {
     const {username} = req.params
-    const userUpdate = await User.find({username})
-    console.log(userUpdate.username)
+    const userUpdate = await User.findOne({username: username})
+    console.log(userUpdate)
     res.render("edit-profile", {userUpdate, username});
   } catch (error) { 
     console.log(error)

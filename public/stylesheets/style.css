@@ -1,9 +1,16 @@
 
-html, body{
+html{
     margin: 0;
     padding: 0;
     font-family: 'Open Sans', sans-serif;
-    height:100%;
+
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+    min-height: 100vh;
 }
 
 #logo{
@@ -58,8 +65,7 @@ html, body{
 .f-container{
     background-color: rgb(82,13,156);
     height: 52px;
-    position: relative;
-
+    position:-ms-page;
     bottom: 0; 
     left: 0; 
     right: 0;
@@ -100,9 +106,10 @@ html, body{
    
 }
 .pflPic{
-    width: 100px;
+    width: 90px;
     margin-left: -130px;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
+    border-radius: 50%;
 }
 .containerPfl{
     margin-top: 30px;
@@ -362,7 +369,7 @@ html, body{
 }
 .loForm{
     margin-top: 30px;
-    margin-bottom: 36px;
+    margin-bottom: 60px;
 }
 .tskTlt{
     color: rgb(82,13,156);
@@ -485,7 +492,7 @@ html, body{
 .btt-ET{
     color:rgb(255, 255, 255);
     background-color: rgb(255, 177, 0);
-    margin-left: 1060px;
+    margin-left: 1230px;
     border: none;
     width: 100px;
     height: 30px;
@@ -522,11 +529,20 @@ html, body{
     border: none;
     width: 100px;
     height: 30px;
-    margin-bottom: 182px;
+    margin-bottom: 107px;
 }
 
 .card{
     margin: 0px 20px;
+}
+.img-IP{
+    border:none;
+    text-align: center;
+    font-size: 16px;
+    border-bottom: 1px solid rgb(141, 141, 141);
+    color: rgb(141, 141, 141);
+    margin-left: 450px;
+    margin-bottom: 50px;
 }
 
 @media (max-width: 390px){
