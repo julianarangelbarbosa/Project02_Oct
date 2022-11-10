@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <title>Document</title>
+</head>
+<body class="pflBody">
+    <div class="containerPfl">  
+    <div class="pflInfo">
+        <img src="{{user.profilePictureURL}}" alt="profilePicture" class="pflPic"/>
+        <a href="/planner" class="lnkPlanner">See all your tasks</a>
+        <form action="" method="post" class="form-EP">
+            <a href="/edit-profile/{{user.username}}" class="lnk-EP">Edit profile</a>
+        </form>
+        <form action="/auth/logout" method="post" class="form-LO">
+            <a href="/auth/logout" class="lnk-LO">Logout</a>
+        </form>
+    </div>
+    <div class="formContainer">
+        <h1 class="greeting">Hey, {{user.username}}</h1>
+        <h1 class="crtTsk">Create a new task</h1>
+        <div class="containerForm">
+            <form action='/create' method="post" class="formTsk">
+                <input type='text' name='title' id='title' placeholder="Title" class="tskIn"/>
+                <textarea name='description' id='description'cols='40' rows='1' placeholder="Describe your task" class="tskIn"></textarea>
+                <input type='date' name='date' id='title' class="tskIn"/>
+                <input type='time' name='hhmm' id='hhmm' min="00:00" max="23:59" class="tskIn"/>
+                <label for="type">Choose a tag:</label>
+                <select name="type" id="type">
+                    <option value="Work">Work</option>
+                    <option value="Personal">Personal</option>
+                    <option value="Family">Family</option>
+                    <option value="School">School</option>
+                    <option value="Leisure">Leisure</option>
+                </select>
+                <input type='text' name='address' id='address' placeholder="Location" class="adIn"/>
+                <button type='submit' class="addTskBtt">Add task</button>
+            </form>
+        </div>
+    </div>
+</div> 
+</body>
+</html>

@@ -1,2 +1,36 @@
-<h1>{{appTitle}} 🚀</h1>
-<p>Welcome Ironhacker!</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <title>Project 02</title>
+</head>
+<body>
+    <section class="head">
+        <div class="navInd">
+            <nav class="navBar">
+                    <div class="containerButtons">
+                        <form action="/auth/login" class="login" method="POST">
+                            <input type="text" placeholder="Email" name="email">
+                            <input type="password" placeholder="Password" name="password">
+                            <button type="submit" class="logB">Login</button>
+                        </form>
+                        <a href="/auth/signup" class="lnkSup">Sign up</a>
+                    </div>
+            </nav>
+        </div>
+    </section>
+    <section>
+        <div class="bContainer">
+            <img src="/images/vector.png" alt="" class="vector"/>
+                <div class="contTxt">
+                    <h1 class="tlt">The planner you <span class="i">really</span> need!</h1>
+                    <p class="sub-tlt">Organize your daily tasks in a very simple way!</p>
+                    <p class="parag">Planning tool aimed at productivity and improvement in personal and professional organization. With it, you can organize tasks, appointments, goals, financial planning, monitor habits, and much more.</p>
+                </div>
+        </div>
+    </section>
+</body>
+</html>

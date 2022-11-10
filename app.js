@@ -2,6 +2,8 @@
 // https://www.npmjs.com/package/dotenv
 require("dotenv").config();
 
+const moment = require('moment')
+
 // ℹ️ Connects to the database
 require("./db");
 
@@ -12,6 +14,10 @@ const express = require("express");
 // Handles the handlebars
 // https://www.npmjs.com/package/hbs
 const hbs = require("hbs");
+
+hbs.registerHelper("formatDate", function(date) {
+return moment(date).format("MMM Do YY");  
+});
 
 const app = express();
 
@@ -29,6 +35,13 @@ app.use("/", indexRoutes);
 
 const authRoutes = require("./routes/auth.routes");
 app.use("/auth", authRoutes);
+
+const profileRoutes = require("./routes/user.routes");
+app.use("/", profileRoutes);
+
+const plannerRoutes = require("./routes/planner.routes");
+app.use("/", plannerRoutes);
+
 
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
 require("./error-handling")(app);
