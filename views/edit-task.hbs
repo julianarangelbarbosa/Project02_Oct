@@ -1,37 +1,29 @@
 <body class="bdContainer"> 
     <h1 class="txtED">Edit your task</h1>
-    <form action='/edit-task/{{_id}}' method="post">
-        <label for="title">Title</label>
-        <input type='text' name='title' id='title' value='{{title}}'/>
-        <p>
-            <label for="description">Description</label>
-            <textarea name='description' id='description' cols='30' rows='10'> {{description}}</textarea>
-        </p>
-        <p>
-            <label for="date">Task Data</label>
-            <input type='date' name='date' id='date' value='{{date}}'/>
-        </p>
-        <p>
-            <label for="hhmm">Task Time</label>
-            <input type='time' name='hhmm' id='hhmm' value='{{hhmm}}'/>
-        </p>
-        <p>
-            <label for="type">Task Type</label>
-            <input type='text' name='type' id='type' value='{{type}}'/>
-        </p>
+    <form action='/edit-task/{{_id}}' method="post" class="form-ET">
+        <input type='text' name='title' id='title' value='{{title}}' class="tlt-IP"/>
+        <textarea name='description' id='description' cols='40' rows='1' class="des-IP">{{description}}</textarea>
+        <input type='date' name='date' id='date' value='{{date}}' class="dt-IP"/>
+        <input type='time' name='hhmm' id='hhmm' value='{{hhmm}}' class="hr-IP"/>
+        <label for="type">Choose a tag:</label>
+            <select name="type" id="type" class="tp-ST">
+                <option value="Work">Work</option>
+                <option value="Personal">Personal</option>
+                <option value="Family">Family</option>
+                <option value="School">School</option>
+                <option value="Leisure">Leisure</option>
+            </select>
         <label for="status">Choose a status:</label>
-        <select name="status" id="status">
-        <option value="In progress">In progress</option>
-        <option value="Done">Done</option>
+        <select name="status" id="status" class="st-ST">
+            <option value="In progress" selected>In progress</option>
+            <option value="Done">Done</option>
         </select>
-        <p>
-            <label for="address">Task Location</label>
-            <input type='text' name='address' id='address' value='{{address}}'/>
-        </p>
-        <button type='submit'>Edit Tasks</button>
-    </form>   
+        <input type='text' name='address' id='address' value='{{address}}' class="add-IP"/>
+        <button type='submit' class="btt-ET">Save task</button>
+    </form>
+   
     <form action="/task-delete/{{_id}}" method="post">
-        <button type='submit'>Delete Task</button>
+        <button type='submit' class="btt-DT">Delete task</button>
     </form>      
 </body>   
 

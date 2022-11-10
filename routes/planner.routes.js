@@ -4,12 +4,17 @@ const isLoggedOut = require("../middleware/isLoggedOut");
 const isLoggedIn = require("../middleware/isLoggedIn");
 const User = require("../models/User.model");
 const Task = require("../models/Task.model")
+const fileUploader = require('../config/cloudinary.config');
+
 
 router.get('/planner', async (req, res, next) => {
   const userId = req.session.currentUser._id;
   try {
     const user = await User.findById(userId).populate("planner")
-    let correctTasks = user.planner.map((task) => { task.date.toDateString()})
+    let correctTasks = user.planner
+    .sort((a, b) => a.date - b.date)
+    .filter((task) => (!task.status || task.status != "Done"))
+    .map((task) => { task.date.toDateString()})
     
     console.log(correctTasks)
     res.render('planner', user);
@@ -59,6 +64,7 @@ router.post('/edit-task/:id', async (req, res, next) => {
   try {
     const { id } = req.params; 
     const { title, description, date, type, status, address, hhmm } = req.body
+    console.log(req.body)
           
     const updatedTask = await Task.findByIdAndUpdate(id, { title, description, date, type, status, address, hhmm });
     res.redirect(`/planner`);
@@ -95,7 +101,7 @@ router.get("/edit-profile/:username", async (req, res) => {
 
   try {
     const {username} = req.params
-    const userUpdate = await User.find()
+    const userUpdate = await User.find({username})
     console.log(userUpdate.username)
     res.render("edit-profile", {userUpdate, username});
   } catch (error) { 
@@ -103,13 +109,21 @@ router.get("/edit-profile/:username", async (req, res) => {
   }});
 
 //Receives edit profile form 
-router.post('/edit-profile/:username', async (req, res, next) => {
+router.post('/edit-profile/:username', fileUploader.single("image"), async (req, res, next) => {
   try {
     const { username } = req.params; 
-    const currentUser = req.session.currentUser
-    const { email, address } = req.body
+    const { email, address, currentImg } = req.body
+
+let profilePictureURL;
+
+if(req.file){
+  profilePictureURL = req.file.path
+} else {
+  profilePictureURL = currentImg
+}
+
           
-    const userUpdateAgain = await User.findOneAndUpdate({username: username}, { username, email, address });
+    const userUpdateAgain = await User.findOneAndUpdate({username: username}, { username, email, address, profilePictureURL });
     res.redirect('/profile');
       
   } catch (error){

@@ -1,3 +1,4 @@
+
 html, body{
     margin: 0;
     padding: 0;
@@ -58,10 +59,10 @@ html, body{
     background-color: rgb(82,13,156);
     height: 52px;
     position: relative;
+
     bottom: 0; 
     left: 0; 
     right: 0;
-    width: 100vw;
     
 }
 .txt{
@@ -416,4 +417,133 @@ html, body{
 .txtED{
     color: rgb(82,13,156);
     margin-left: 400px;
+}
+.form-ET{
+    display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+    margin-left: -280px;
+}
+.tlt-IP{
+    border:none;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 16px;
+    border-bottom: 1px solid rgb(141, 141, 141);
+    color: rgb(141, 141, 141); 
+}
+.des-IP{
+    border:none;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 16px;
+    border-bottom: 1px solid rgb(141, 141, 141);
+    color: rgb(141, 141, 141); 
+}
+.dt-IP{
+    border:none;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 16px;
+    border-bottom: 1px solid rgb(141, 141, 141);
+    color: rgb(141, 141, 141); 
+}
+.hr-IP{
+    border:none;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 16px;
+    border-bottom: 1px solid rgb(141, 141, 141);
+    color: rgb(141, 141, 141);
+}
+.tp-ST{
+    border:none;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 16px;
+    border-bottom: 1px solid rgb(141, 141, 141);
+    color: rgb(141, 141, 141);
+}
+.st-ST{
+    border:none;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 16px;
+    border-bottom: 1px solid rgb(141, 141, 141);
+    color: rgb(141, 141, 141);
+}
+.add-IP{
+    border:none;
+    text-align: center;
+    font-size: 16px;
+    border-bottom: 1px solid rgb(141, 141, 141);
+    color: rgb(141, 141, 141);
+}
+.btt-ET{
+    color:rgb(255, 255, 255);
+    background-color: rgb(255, 177, 0);
+    margin-left: 1060px;
+    border: none;
+    width: 100px;
+    height: 30px;
+    margin-bottom: 20px;
+    margin-top: -20px;
+}
+.btt-DT{
+    color:rgb(255, 255, 255);
+    background-color: rgb(255, 177, 0);
+    margin-left: 1060px;
+    border: none;
+    width: 100px;
+    height: 30px; 
+}
+.ep-Tlt{
+    color: rgb(82,13,156);
+    margin-left: 500px;
+    margin-top: 40px;
+}
+.edPfl-IN{
+    border:none;
+    text-align: center;
+    font-size: 16px;
+    border-bottom: 1px solid rgb(141, 141, 141);
+    color: rgb(141, 141, 141);
+    margin-left: 520px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.btt-EP{
+    color:rgb(255, 255, 255);
+    background-color: rgb(255, 177, 0);
+    margin-left: 567px;
+    border: none;
+    width: 100px;
+    height: 30px;
+    margin-bottom: 182px;
+}
+
+.card{
+    margin: 0px 20px;
+}
+
+@media (max-width: 390px){
+    .plannerTlt{
+        width: 50vw;
+    }
+
+    .containerCards{
+        margin-left: 0;
+        justify-content: space-around;
+        align-items: center;
+        align-content: space-evenly;
+    }
+    .card{
+       width: 80vw;
+       margin-left: -50px;
+    }
+
+/* Profile */
 }
