@@ -17,9 +17,6 @@ router.get('/planner', async (req, res, next) => {
     
   }
 }); 
-
-
-
 router.post('/create', async (req, res, next) => {
    const userId = req.session.currentUser._id
   try {

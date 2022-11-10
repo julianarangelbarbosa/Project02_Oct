@@ -17,7 +17,7 @@ const taskSchema = new Schema(
     },
     status: {
         type: String,
-        enum: ['In process', 'Done']
+        enum: ['In progress', 'Done']
     },
     address: {
         type: String,

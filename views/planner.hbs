@@ -15,8 +15,8 @@
         <div class="card" style="width: 16rem;">
             <div class="card-body {{type}}">
                 <a href="/task/{{_id}}" class="lnk-vt"><h5 class="card-title">{{title}}</h5></a>
-                <p class="txtDate">{{#formatDate date}} {{/formatDate}}</p>
-                <p class="card-text">{{hhmm}}</p>
+                <p class="txtDate">Date: {{#formatDate date}} {{/formatDate}}</p>
+                <p class="txtHour">Hour: {{hhmm}}</p>
                 <p class="txtType">{{type}}</p>
             </div>
         </div>
@@ -26,7 +26,7 @@
 </body>
 
 <form action="/profile" method="post" class="frm-Pfl">
-<a href="/profile" class="lnk-Pfl">Your profile</a>
+<a href="/profile" class="lnk-Pfl">Create new task</a>
 </form>
 
 

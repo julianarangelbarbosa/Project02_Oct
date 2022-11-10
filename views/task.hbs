@@ -1,17 +1,18 @@
-<h1>Tasks page</h1>
-
-    <p>Title: {{title}}</p>
-    <p>Description: {{description}}</p>
-    <p>Task Date dd/mm/yy: {{date}}</p>
-     <p>Task Time: {{hhmm}}</p>   
-    <p>Task Type: {{type}}</p>  
-    <p>Status: {{status}}</p>
-    <p>Address: {{address}}</p>
-    <a href='/edit-task/{{_id}}'>Edit Task</a>
-
-<p>
-<form action="/auth/logout" method="post">
-<a href="/auth/logout">Logout</a>
-</form>
-</p>
-
+<body class="tskbd">
+    <h1 class="tskTlt">Your task</h1>
+    <div class="containerTsk">
+        <p class="tltP">{{title}}</p>
+        <p class="tltD">{{description}}</p>
+        <p class="tltF">{{#formatDate date}} {{/formatDate}}</p>
+        <p class="tltH">{{hhmm}}</p>   
+        <p class="tltT">{{type}}</p>  
+        <p class="tltS">{{status}}</p>
+        <p class="tltA">{{address}}</p>
+    </div>
+    <a href='/edit-task/{{_id}}' class="lnk-ET">Edit Task</a>
+    <p>
+    <form action="/auth/logout" method="post" class="loForm">
+        <a href="/planner" class="lnk-lo">All tasks</a>
+    </form>
+    </p>
+</body>
