@@ -1,18 +1,52 @@
-<html lang="en">
+<html lang='en'>
 
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta charset='UTF-8' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+    <meta http-equiv='X-UA-Compatible' content='ie=edge' />
     <title>{{appTitle}}</title>
-    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='preconnect' href='https://fonts.googleapis.com' />
+    <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin />
+    <link
+      href='https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap'
+      rel='stylesheet'
+    />
   </head>
 
   <body>
-
+    <div class='containerNav'>
+      <nav class='navBar'>
+        <a href='/' class='lnkHome'><img src='/images/logo.png' alt='logo' id='logo' /></a>
+      </nav>
+    </div>
     {{{body}}}
 
-    <script src="/js/script.js"></script>
   </body>
+
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+
+  <footer class='f-container'>
+    <p class='txt'>Made with
+      <span class='red'><svg
+          xmlns='http://www.w3.org/2000/svg'
+          width='10'
+          height='10'
+          fill='currentColor'
+          class='bi bi-suit-heart-fill'
+          viewBox='0 0 16 16'
+        >
+          <path
+            d='M4 1c2.21 0 4 1.755 4 3.92C8 2.755 9.79 1 12 1s4 1.755 4 3.92c0 3.263-3.234 4.414-7.608 9.608a.513.513 0 0 1-.784 0C3.234 9.334 0 8.183 0 4.92 0 2.755 1.79 1 4 1z'
+          ></path>
+        </svg></span>
+      by: Camila && Juliana</p>
+  </footer>
+
+  <script src='/js/script.js'></script>
 
 </html>
